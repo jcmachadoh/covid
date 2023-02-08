@@ -1,0 +1,11 @@
+extends main
+
+block content
+  div.delete#page-wrapper(style="min-height: 466px;")
+    div.container-fluid(style="margin-top: 50px; margin-bottom: 50px;")
+        h3 Cargar datos 
+        form.needs-validation(action='recibir', method='POST', enctype="multipart/form-data")
+            div.form-group
+                label(for="exampleFormControlFile1") Busque su  fichero en el sistema
+                input.form-control-file(type="file" id="exampleFormControlFile1" name="excel" required)
+            button.btn.btn-lg.btn-primary.btn-block(type="submit") importar

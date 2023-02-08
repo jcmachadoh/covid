@@ -1,0 +1,47 @@
+extends main
+    
+block content
+  div.delete#page-wrapper(style="min-height: 466px;")
+    div.container-fluid(style="margin-top: 50px; margin-bottom: 50px;")
+        h3 Filtrar 
+        form(action='/data/busqueda', method='POST')
+            div.form-group.row
+                label.col-sm-2.col-form-label Buscar en tabla:
+                div.col-sm-10
+                    div.form-check
+                        input.form-check-input(type="radio" placeholder="Nombre" , name="tabla", value="positivos", checked)
+                        label.form-check-label(for="gridCheck1") Pacientes ingresados actualmente
+                    div.form-check
+                        input.form-check-input(type="radio" placeholder="Nombre" , name="tabla", value="historicos" )
+                        label.form-check-label(for="gridCheck1") Todos los pacientes que han pasado por el centro
+            div.form-group.row
+                label.col-sm-2.col-form-label Nombre:
+                div.col-sm-10
+                    input.form-control(type="text" placeholder="Nombre" , name="nombre")
+            div.form-group.row
+                label.col-sm-2.col-form-label Primer apellido:
+                div.col-sm-10
+                    input.form-control(type="text" placeholder="Primer apellido" , name="primerapellido")
+            div.form-group.row
+                label.col-sm-2.col-form-label Segundo apellido:
+                div.col-sm-10
+                    input.form-control(type="text" placeholder="Segundo apellido" , name="segundoapellido")
+            div.form-group.row
+                label.col-sm-2.col-form-label Carnet de identidad:
+                div.col-sm-10
+                    input.form-control(type="number" placeholder="Carnet de identidad" , name="ci")
+            div.form-group.row
+                label.col-sm-2.col-form-label Categoria:
+                div.col-sm-10
+                    select.form-control(name="categoria")
+                        option(value="-") Sin Catedoria 
+                        option(value="Oficial") Oficial 
+                        option(value="Sub Oficial") Sub Oficial 
+                        option(value="Sargento y Soldado") Sargento y Soldado
+                        option(value="Civil de las FAR") Civil de las FAR 
+                        option(value="Civil") Civil
+            div.form-group.row
+                label.col-sm-2.col-form-label Unidad Militar:
+                div.col-sm-10
+                    input.form-control(type="text" placeholder="Unidad militar" , name="unidad")
+            button.btn.btn-lg.btn-primary.btn-block(type="submit") buscar

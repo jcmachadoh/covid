@@ -1,0 +1,72 @@
+extends main 
+
+block content
+  div.delete#page-wrapper(style="min-height: 466px;")
+    div.container-fluid(style="margin-top: 50px; margin-bottom: 50px;")
+        h3 Adicionar paciente 
+        form.needs-validation(action='adicionar' method='POST' novalidate)
+            div.form-group
+                label Nombre
+                input.form-control(type="text" placeholder="A-Z a-z" name="nombre" required pattern="[A-Za-z ]+")
+                //div.valid-feedback necesita llenar este campo
+            div.form-group
+                label Primer Apellido
+                input.form-control(type="text" placeholder="A-Z a-z" name="primerapellido" required pattern="[A-Za-z ]+")
+            div.form-group
+                label Segundo Apellido
+                input.form-control(type="text" placeholder="A-Z a-z" name="segundoapellido" required pattern="[A-Za-z ]+")
+            div.form-group
+                label Carnet de Identidad 
+                input.form-control(type="text" name='ci' minlength=11 maxlength=11 required pattern="[0-9]+")
+            div.form-group
+                label Edad 
+                input.form-control(type="text" name='edad' required maxlength=3 pattern="[0-9]+")
+            div.form-group
+                label Sexo
+                div.form-check
+                    input.form-check-input(type="radio" name="sex" value="Femenino" checked)
+                    label.form-check-label Feminino
+                div.form-check
+                    input.form-check-input(type="radio" name="sex" value="Masculino")
+                    label.form-check-label Masculino
+            div.form-group
+                label Categoria 
+                select.form-control(name="categoria")
+                        option(value="Oficial") Oficial 
+                        option(value="Sub Oficial") Sub Oficial 
+                        option(value="sgi") Sargento Profecional
+                        option(value="Soldado") Sargento y Soldado
+                        option(value="Cadete") Cadete
+                        option(value="T Civil") Civil de las FAR 
+                        option(value="Civil") Civil
+            div.form-group
+                label Unidad Militar 
+                input.form-control(type="text" name='unidad' minlength=4 maxlength=4 pattern="[0-9]+")
+            div.form-group
+                label Provincia
+                select.form-control(name='provincia')
+                    option(value="Guantanamo") Guantanamo 
+                    option(value="Santiago de Cuba") Santiago de Cuba 
+                    option(value="Granma") Granma 
+                    option(value="Guantanamo") Holguin 
+                    option(value="Guantanamo") Las Tunas
+                    option(value="Camaguey") Camaguey
+            div.form-group
+                label Municipio
+                input.form-control(type="text" name='municipio' required maxlength=30 pattern="[A-Za-z]+")
+            div.form-group
+                label Direccion particular
+                textarea.form-control(name="direccion" pattern="[A-Za-z0-9 ]+")
+            div.form-group 
+                label Fecha de ingreso 
+                input.form-control(type="date" name='fechaingreso' required)
+            div.form-group 
+                label Fecha de inicio de los sintomas
+                input.form-control(type="date" name='fis' required)
+            div.form-group 
+                label Fecha de resultado del PCR 
+                input.form-control(type="date" name='fechapcr' required)
+            button.btn.btn-lg.btn-primary.btn-block(type="submit") adicionar
+            
+
+ 

@@ -1,0 +1,63 @@
+extends layout
+
+block menu
+    nav.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+      div.navbar-header
+        h3.text-primary Sistema de Control a la COVID-19           
+    div.navbar-default.sidebar(role="navigation")
+      div.sidebar-nav.navbar-collapse
+        ul.nav#side-menu
+          li.sidebar-search
+            div.input-group.custom-search-form
+              input.form-control(type="text" placeholder="Search...")
+              span.input-group-btn
+                button.btn.btn-primary(type="button")
+                  i.fa.fa-search
+          li
+            a.active(href="/home")
+              i.fa.fa-dashboard.fa-fw  Tablero
+          li
+            a(href="/adicionar")
+              i.fa.fa-table.fa-fw  Adicionar
+          li
+            a(href="/data/importar")
+              i.fa.fa-edit.fa-fw  Importar
+          li
+            a(href="#")
+              i.fa.fa-list-ul  Listados
+              span.fa.arrow
+            ul.nav.nav-second-level
+              li
+                a( href="/listapositivos")
+                  p.fa.fa-bed  Casos activos
+              li
+                a(href="/listaaltas")
+                  p.fa.fa-child  Altas del d&iacute;a
+              li
+                a(href="/historicos")
+                  p.fa.fa-history  Datos historicos
+              li
+                a(href="/evolutivos")
+                  p.fa.fa-heart  PCR para el dia
+              li 
+                a(href="/fallecidos")
+                  p.fa.fa-crosshairs  Lista de fallecidos
+          li
+            a(href="/data/filtrar")
+              i.fa.fa-edit.fa-fw  Filtrar
+          li
+            a(href="#")
+              i.fa.fa-download  Exportar
+              span.fa.arrow
+              ul.nav.nav-second-level
+                li
+                  a(href="/data/exportarpositivos") 
+                    p.fa.fa-file-excel-o  Estado de pacientes positivos
+                li
+                  a(href="#") 
+                    p.fa.fa-file-excel-o  Historico de pacientes
+                li
+                  a(href="/data/exportarevolutivos") 
+                    p.fa.fa-file-excel-o  Muestras de PCR para hoy
+    block content
+

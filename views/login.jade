@@ -1,0 +1,16 @@
+extends layout 
+block content
+    div.container
+            div.row
+                div.col-md-4.col-md-offset-4
+                    div.login-panel.panel.panel-default
+                        div.panel-heading
+                            h3.panel-title Autent&iacute;quese
+                        div.panel-body
+                            form(role="form" method='POST', action='autenticacion')
+                                fieldset
+                                    div.form-group
+                                        input.form-control(type='text', name='correo', placeholder="Entre el correo", required, autofocus)
+                                    div.form-group
+                                        input.form-control(type='password', placeholder="Entre la contraseña", name='contrasena', required)
+                                    button.btn.btn-lg.btn-success.btn-block(href="index.html" type="submit") Login

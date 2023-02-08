@@ -1,0 +1,28 @@
+{
+    "name": "covid",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node ./bin/www"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "bluebird": "^3.7.2",
+        "connect-sqlite3": "^0.9.12",
+        "cookie-parser": "^1.4.5",
+        "cookie-session": "^1.4.0",
+        "debug": "^2.6.9",
+        "excel4node": "^1.7.2",
+        "express": "^4.16.4",
+        "express-fileupload": "^1.2.1",
+        "express-session": "^1.17.2",
+        "http-errors": "^1.6.3",
+        "jade": "^1.11.0",
+        "morgan": "^1.9.1",
+        "msexcel-builder": "0.0.2",
+        "pg": "^8.6.0",
+        "read-excel-file": "^5.2.9",
+        "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
+        "xlsx": "^0.17.1"
+    }
+}

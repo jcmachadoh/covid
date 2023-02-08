@@ -1,0 +1,55 @@
+extends main
+    
+block content
+  div.delete#page-wrapper(style="min-height: 466px;")
+    div.container-fluid(style="margin-top: 50px; margin-bottom: 50px;")
+      div.row
+        div.col-lg-12
+          div.panel.panel-default
+            div.panel-heading 
+              h3 Listado de fallecidos
+            div.panel-body
+              div.table-responsive
+                table.table.table-striped.table-bordered.table-hover(id="dataTables" )
+                  thead.thead-dark
+                    tr
+                      th(scope="col") #
+                      th(scope="col") Nombre y Apellidos
+                      th(scope="col") Carnet 
+                      th(scope="col") Edad 
+                      th(scope="col") Sexo
+                      th(scope="col") Categoria 
+                      th(scope="col") Unidad
+                      th(scope="col") Provincia 
+                      th(scope="col") Municipio
+                      th(scope="col") Direccion
+                      th(scope="col") F. Ingreso
+                      th(scope="col") F. Muerte
+                  tbody
+                    - var contador = 1
+                    each fallecido in fallecidos
+                      tr
+                        th(scope="row")
+                          p= contador++
+                          td 
+                            p= fallecido.nombre
+                          td 
+                            p= fallecido.ci
+                          td 
+                            p= fallecido.edad
+                          td 
+                            p= fallecido.sexo
+                          td 
+                            p= fallecido.categoria
+                          td 
+                            p= fallecido.unidad
+                          td 
+                            p= fallecido.provincia 
+                          td 
+                            p= fallecido.municipio
+                          td 
+                            p= fallecido.direccion
+                          td 
+                            p= fallecido.fechaingreso
+                          td 
+                            p= fallecido.fechadeseso

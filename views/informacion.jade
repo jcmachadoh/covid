@@ -1,0 +1,56 @@
+extends main 
+
+block content
+  div.delete#page-wrapper(style="min-height: 466px;")
+    div.container-fluid(style="margin-top: 50px; margin-bottom: 50px;")
+      h3 Lista de positivos
+      table.table.table-striped
+        thead.thead-dark
+          tr
+            th(scope="col") #
+            th(scope="col") Nombre y Apellidos
+            th(scope="col") Carnet 
+            th(scope="col") Edad 
+            th(scope="col") Sexo
+            th(scope="col") Categoria
+            th(scope="col") Unidad
+            th(scope="col") Provincia 
+            th(scope="col") Municipio
+            th(scope="col") Direccion
+            th(scope="col") Ingreso
+            th(scope="col") FIS 
+            th(scope="col") F. PCR 
+            th(scope="col") PCR Evolutivo
+        tbody
+          - var contador = 1
+          each positivo in positivos
+            tr
+              th(scope="row")
+                p= contador++
+                td 
+                  p= positivo.nombre
+                td 
+                  p= positivo.ci
+                td 
+                  p= positivo.edad
+                td 
+                  p= positivo.sexo
+                td 
+                  p= positivo.categoria 
+                td 
+                  p= positivo.unidad
+                td 
+                  p= positivo.provincia 
+                td
+                  p= positivo.municipio
+                td
+                  p= positivo.direccion
+                td 
+                  p= positivo.fechaingreso 
+                td 
+                  p= positivo.fis
+                td 
+                  p= positivo.fechapcr
+                td  
+                  p= evolutivo        
+      
